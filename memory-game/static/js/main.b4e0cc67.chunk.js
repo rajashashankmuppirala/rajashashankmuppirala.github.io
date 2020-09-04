@@ -136,7 +136,7 @@
 
             return Object(c.a)(a, [{
                 key: 'render', value: function () {
-                    return console.log('steps called'), d.a.createElement(C.a, null, d.a.createElement(v.a, {
+                    return d.a.createElement(C.a, null, d.a.createElement(v.a, {
                         style: E.timer,
                         id: 'steps',
                     }, 'Moves:', this.props.total), d.a.createElement(v.a, {

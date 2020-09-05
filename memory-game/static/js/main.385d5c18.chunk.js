@@ -55,14 +55,21 @@
 }, , , , , , , , , function (e, t, a) {
     'use strict';
     a.r(t);
-    var n = a(98), r = a(25), i = a.n(r), s = a(34), o = a(5), c = a(6), p = a(8), l = a(7), u = a(0), d = a.n(u),
-        m = [a(59), a(60), a(61), a(62), a(63), a(64), a(65), a(66), a(67), a(68), a(69), a(70), a(71), a(72), a(73), a(74), a(75), a(76), a(77), a(78), a(79), a(80), a(81), a(82)],
+    var n = a(98), r = a(25), i = a.n(r), s = a(34), o = a(5), c = a(6), p = a(8), l = a(7), u = a(0), m = a.n(u),
+        d = [a(59), a(60), a(61), a(62), a(63), a(64), a(65), a(66), a(67), a(68), a(69), a(70), a(71), a(72), a(73), a(74), a(75), a(76), a(77), a(78), a(79), a(80), a(81), a(82)],
         f = a(94), h = a(95), b = a(10), g = a(96), v = a(93), y = a(97), x = a(35), w = a(2), j = x.a.get('window'),
         O = Math.floor(.125 * j.width), k = Math.floor(O * (323 / 222)), E = w.a.create({
-            container: {backgroundColor: 'gray', paddingTop: 10, flex: 1},
+            container: {backgroundColor: 'gray', paddingTop: 50, flex: 1},
             title: {alignItems: 'center', justifyContent: 'center', textAlign: 'center', color: 'white', fontSize: 20},
-            timer: {alignItems: 'center', justifyContent: 'center', textAlign: 'center', color: 'white', fontSize: 10},
-            safearea: {alignItems: 'center', justifyContent: 'center', flex: 1},
+            timer: {
+                paddingTop: 3,
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                color: 'white',
+                fontSize: 14,
+            },
+            safearea: {paddingTop: 10, alignItems: 'center', justifyContent: 'center', flex: 1},
             row: {
                 flexDirection: 'row',
                 justifyContent: 'space-around',
@@ -72,7 +79,7 @@
             },
             card: {backgroundColor: '#fff', borderColor: '#fff', borderWidth: 5, borderRadius: 3},
             cardImage: {width: O, height: k},
-        }), C = a(100), S = a(99), I = function (e) {
+        }), C = a(100), S = a(99), T = function (e) {
             Object(p.a)(n, e);
             var t = Object(l.a)(n);
 
@@ -84,13 +91,13 @@
                 key: 'render', value: function () {
                     var e = this.props.onPress, t = this.props.solved, n = this.props.isDisabled,
                         r = this.props.display ? this.props.displayImage : a(83);
-                    return d.a.createElement(C.a, {
+                    return m.a.createElement(C.a, {
                         disabled: t || n,
                         onPress: e,
-                    }, d.a.createElement(b.a, {style: E.card}, d.a.createElement(S.a, {style: E.cardImage, source: r})));
+                    }, m.a.createElement(b.a, {style: E.card}, m.a.createElement(S.a, {style: E.cardImage, source: r})));
                 },
             }]), n;
-        }(d.a.Component), T = function (e) {
+        }(m.a.Component), I = function (e) {
             Object(p.a)(a, e);
             var t = Object(l.a)(a);
 
@@ -100,10 +107,10 @@
 
             return Object(c.a)(a, [{
                 key: 'render', value: function () {
-                    return d.a.createElement(b.a, {style: E.row}, this.props.children);
+                    return m.a.createElement(b.a, {style: E.row}, this.props.children);
                 },
             }]), a;
-        }(d.a.Component), M = function (e) {
+        }(m.a.Component), M = function (e) {
             Object(p.a)(a, e);
             var t = Object(l.a)(a);
 
@@ -115,6 +122,8 @@
                             return {timer: e.timer + 1};
                         }));
                     }), 1e3);
+                }, e.stopTimer = function () {
+                    clearInterval(e.timer);
                 }, e.refreshTimer = function () {
                     clearInterval(e.timer), e.setState({timer: 0}), e.initTimer();
                 }, e.state = {timer: 0}, e.initTimer(), e;
@@ -122,13 +131,13 @@
 
             return Object(c.a)(a, [{
                 key: 'render', value: function () {
-                    return d.a.createElement(C.a, null, d.a.createElement(v.a, {
+                    return m.a.createElement(C.a, null, m.a.createElement(v.a, {
                         style: E.timer,
                         id: 'timer',
-                    }, 'Timer:', this.state.timer));
+                    }, 'Timer: ', this.state.timer));
                 },
             }]), a;
-        }(d.a.Component), A = function (e) {
+        }(m.a.Component), A = function (e) {
             Object(p.a)(a, e);
             var t = Object(l.a)(a);
 
@@ -138,16 +147,16 @@
 
             return Object(c.a)(a, [{
                 key: 'render', value: function () {
-                    return d.a.createElement(C.a, null, d.a.createElement(v.a, {
+                    return m.a.createElement(C.a, null, m.a.createElement(v.a, {
                         style: E.timer,
                         id: 'steps',
-                    }, 'Moves:', this.props.total), d.a.createElement(v.a, {
+                    }, 'Moves: ', this.props.total), m.a.createElement(v.a, {
                         style: E.timer,
                         id: 'steps',
-                    }, 'Solved:', this.props.solved));
+                    }, 'Solved: ', this.props.solved));
                 },
             }]), a;
-        }(d.a.Component), D = function (e) {
+        }(m.a.Component), D = function (e) {
             Object(p.a)(a, e);
             var t = Object(l.a)(a);
 
@@ -160,7 +169,7 @@
                     }
                     return t = t.concat(t), (t = e.shuffleArray(t)).map((function (e, t) {
                         var r = {};
-                        r.id = t, r.display = !1, r.solved = !1, r.value = m[e], n.push(r), (t + 1) % 5 === 0 && (a.push(n), n = []);
+                        r.id = t, r.display = !1, r.solved = !1, r.value = d[e], n.push(r), (t + 1) % 5 === 0 && (a.push(n), n = []);
                     })), a;
                 }, e.shuffleArray = function (e) {
                     for (var t = e.slice(), a = t.length; a; a -= 1) {
@@ -211,7 +220,7 @@
                                                                         }));
                                                                     })), t.next = 13, e.setState({rows: e.state.rows});
                                                                 case 13:
-                                                                    1 == e.state.count && e.onFinish(), t.next = 18;
+                                                                    15 == e.state.count && e.onFinish(), t.next = 18;
                                                                     break;
                                                                 case 16:
                                                                     setTimeout((function () {
@@ -248,7 +257,7 @@
                         return t.apply(this, arguments);
                     };
                 }(), e.displayAlert = function () {
-                    'web' !== f.a.OS ? h.a.alert('Congratulations!!', 'You have completed the game in '.concat(e.state.moves, ' moves.'), [{
+                    e.timerElement.current.stopTimer(), 'web' !== f.a.OS ? h.a.alert('Congratulations!!', 'You have completed the game in '.concat(e.state.moves, ' moves.'), [{
                         text: 'OK',
                         onPress: e.reset,
                     }], {cancelable: !1}) : window.confirm('Congratulations!!' + 'You have completed the game in '.concat(e.state.moves, ' moves.')) && e.reset();
@@ -262,18 +271,18 @@
                     moves: 0,
                     count: 0,
                     isDisabled: !1,
-                }, e.timerElement = d.a.createRef(), e;
+                }, e.timerElement = m.a.createRef(), e;
             }
 
             return Object(c.a)(a, [{
                 key: 'render', value: function () {
                     var e = this;
-                    return d.a.createElement(b.a, {style: E.container}, d.a.createElement(g.a, {barStyle: 'light-content'}), d.a.createElement(v.a, {style: E.title}, 'Memory Matching Game'), d.a.createElement(M, {ref: this.timerElement}), d.a.createElement(A, {
+                    return m.a.createElement(b.a, {style: E.container}, m.a.createElement(g.a, null), m.a.createElement(v.a, {style: E.title}, 'Memory Matching Game'), m.a.createElement(M, {ref: this.timerElement}), m.a.createElement(A, {
                         total: this.state.moves,
                         solved: this.state.count,
-                    }), d.a.createElement(y.a, {style: E.safearea}, this.state.rows.map((function (t, a) {
-                        return d.a.createElement(T, {key: a, index: a}, t.map((function (t, a) {
-                            return d.a.createElement(I, {
+                    }), m.a.createElement(y.a, {style: E.safearea}, this.state.rows.map((function (t, a) {
+                        return m.a.createElement(I, {key: a, index: a}, t.map((function (t, a) {
+                            return m.a.createElement(T, {
                                 key: t.id,
                                 isDisabled: e.state.isDisabled,
                                 display: t.display,
@@ -287,9 +296,9 @@
                     }))))
                 }
             }]), a
-        }(d.a.Component), R = a(36);
+        }(m.a.Component), R = a(36);
     n.a.registerComponent(R.a, (function () {
         return D
     })), n.a.runApplication(R.a, {rootTag: document.getElementById("memory-game")})
 }]), [[56, 1, 2]]]);
-//# sourceMappingURL=main.aabf560e.chunk.js.map
+//# sourceMappingURL=main.385d5c18.chunk.js.map
